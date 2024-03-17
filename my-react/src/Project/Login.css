@@ -62,39 +62,22 @@
    border-radius: 5px;
     
   }
-  .slider-container {
-    position: relative;
-  }
-  
-  .slider {
-    display: flex;
-    overflow: hidden;
-  }
-  
-  .slider img {
-    width: 100%;
-    height: auto;
-    transition: transform 0.5s ease;
-  }
-  
-  .prev,
-  .next {
+  .google_signin{
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: #007bff;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
+    width: 20%;
+    top: 76%;
+    left: 25.5%;
+    border-image: 2px;
+    text-shadow:1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue
   }
-  
-  .prev {
-    left: 0;
+  .forgot{
+      position: absolute;
+      font-size: 13px;
+      color: grey;
+      font-family: sohne, "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: 400;
+      bottom: 40px;
+      left: 25%;
+
+      
   }
-  
-  .next {
-    right: 0;
-  }
-  
-  

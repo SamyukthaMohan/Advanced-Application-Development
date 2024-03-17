@@ -1,48 +1,25 @@
-import React, { useState } from 'react';
-import './Slider.css';
+import React, { useState, useEffect } from 'react';
+import './Slider.css'; // Import your CSS file for styling
 
 const Slider = ({ images }) => {
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  const nextSlide = () => {
-    setCurrentSlide((prevSlide) => (prevSlide === images.length - 1 ? 0 : prevSlide + 1));
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prevSlide) => (prevSlide === 0 ? images.length - 1 : prevSlide - 1));
-  };
-
-  const jumpToSlide = (index) => {
-    setCurrentSlide(index);
-  };
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 3000); // Change image every 3 seconds
+    return () => clearInterval(interval);
+  }, [images]);
 
   return (
-    <div className="slider-container">
-      <div className="slider">
-        {images.map((image, index) => (
-          <img
-            key={index}
-            src={image.src}
-            alt={image.alt}
-            className={index === currentSlide ? 'slide active' : 'slide'}
-          />
-        ))}
-      </div>
-      <div className="dots">
-        {images.map((_, index) => (
-          <span
-            key={index}
-            className={index === currentSlide ? 'dot active' : 'dot'}
-            onClick={() => jumpToSlide(index)}
-          ></span>
-        ))}
-      </div>
-      <button className="prev" onClick={prevSlide}>
-        Prev
-      </button>
-      <button className="next" onClick={nextSlide}>
-        Next
-      </button>
+    <div className="slider">
+      {images.map((imageUrl, index) => (
+        <div
+          key={index}
+          className={`slide ${index === currentIndex ? 'active' : ''}`}
+          style={{ backgroundImage: `url(${imageUrl})` }}
+        ></div>
+      ))}
     </div>
   );
 };
