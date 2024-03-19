@@ -1,0 +1,29 @@
+.vb_event-list {
+    width: 100%;
+  }
+  
+  .vb_event-header {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    font-weight: bold;
+    background-color: #f0f0f0;
+    padding: 10px;
+  }
+  
+  .vb_event-item {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+  .vb_event-item div {
+    padding: 5px;
+  }
+  
+  .vb_event-item button {
+    padding: 5px 10px;
+    margin-right: 5px;
+    cursor: pointer;
+  }
+  

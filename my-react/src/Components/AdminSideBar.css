@@ -1,0 +1,41 @@
+.dinoside_sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -250px; 
+    background-color: #008080; /* Dark blue */
+    padding-top: 50px;
+    transition: left 0.3s; 
+  }
+  
+  .dinoside_sidebar.show {
+    left: 0; 
+  }
+  
+  .dinoside_sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #ffffff; /* White */
+    display: block;
+  }
+  
+  .dinoside_sidebar a:hover {
+    background-color: #005588; /* Medium blue */
+  }
+  
+  .dinoside_hamburger-menu {
+    cursor: pointer;
+    position: fixed;
+    top: 25px; 
+    left: 20px;
+    z-index: 1000; 
+  }
+  
+  .dinoside_line {
+    width: 30px;
+    height: 3px;
+    background-color: #ffffff; /* White */
+    margin: 5px 0;
+  }

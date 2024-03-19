@@ -13,26 +13,26 @@ import Slider from '../Components/Slider';
       // Add more image URLs as needed
     ];
   return (
-    <div className="container">
+    <div className="login_container">
       <form className="login-form">
         <h2>Login</h2>
-        <div className="form-group">
+        <div className="login_form-group">
           <label>Email:</label>
           <input type="email" placeholder="Enter your email" />
         </div>
-        <div className="form-group">
+        <div className="login_form-group">
           <label>Password:</label>
           <input type="password" placeholder="Enter your password" />
         </div>
-        <button type="submit">Login</button><br/>
+        <Link to="/dashboard"><button type="submit">Login</button><br/></Link>
         <Link to="/signup"><button type="submit" >Signup</button></Link>
         <div>
-       <a href='https://developers.google.com/identity/branding-guidelines' target='_blank'> <img className='google_signin' src='https://onymos.com/wp-content/uploads/2020/10/google-signin-button-1024x260.png'/></a>
+       <a href='https://developers.google.com/identity/branding-guidelines' target='_blank'> <img className='login_google_signin' src='https://onymos.com/wp-content/uploads/2020/10/google-signin-button-1024x260.png'/></a>
         </div>
-        <p className='forgot'>Forgot email or trouble signing in?<Link to='/signup'> Get help</Link>.</p>
+        <p className='login_forgot'>Forgot email or trouble signing in?<Link to='/signup'> Get help</Link>.</p>
       </form>
-      <div className="side-box">
-      <Slider images={images}/>
+      <div className="login_side-box">
+     <Link to="/adminlogin"> <Slider images={images}/></Link>
       </div>
       </div>
       );

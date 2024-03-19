@@ -1,0 +1,30 @@
+.ee-event-form {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .ee-event-form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .ee-event-form input[type="text"],
+  .ee-event-form input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+  }
+  
+  .ee-event-form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .ee-event-form button:hover {
+    background-color: #45a049;
+  }
+  

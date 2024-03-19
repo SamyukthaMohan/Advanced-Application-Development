@@ -1,0 +1,95 @@
+.user_navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #B784B7; /* Teal background color */
+    padding: 15px 40px; /* Increased padding */
+    position: absolute;
+    top: -1%;
+    left: -5%;
+    width: 98%;
+    height: 13%;
+  }
+  
+  .user_navbar-logo {
+     padding-left: 35px;
+  }
+  
+  .user_logo-link {
+    text-decoration: none;
+  }
+  
+  .user_logo-link img {
+    width: 150px; /* Adjust the logo size as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-top: 15%;
+    transition: transform 0.3s ease; /* Add smooth transition effect */
+  }
+  
+  .user_logo-link img:hover {
+    transform: scale(1.1); /* Increase size on hover */
+  }
+  
+  .user_navbar-links {
+    display: flex;
+    align-items: center;
+  }
+  
+  .user_menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+  
+  .user_menu-item {
+    text-decoration: none;
+    color: #ffffff; /* White text color */
+    margin-right: 25px; /* Increased margin between menu items */
+    transition: color 0.3s;
+  }
+  
+  .user_menu-item:hover {
+    color: #cceeff; /* Light blue text color on hover */
+  }
+  
+  .user_user-profile {
+    position: relative;
+  }
+  
+  .user_user-toggle {
+    background-color: transparent;
+    border: none;
+    color: #ffffff; /* White text color */
+    cursor: pointer;
+  }
+  
+  .user_user-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #008080; /* Teal background color */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .user_user-menu.open {
+    display: block;
+  }
+  
+  .user_user-menu-item {
+    text-decoration: none;
+    color: #ffffff; /* White text color */
+    display: block;
+    padding: 12px 15px; /* Increased padding */
+    transition: background-color 0.3s;
+  }
+  
+  .user_user-menu-item:hover {
+    background-color: #0056b3; /* Darker teal background color on hover */
+  }
+  

@@ -1,0 +1,50 @@
+/* UserDashboard.css */
+
+.user-dashboard {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+  }
+  
+  .banner img {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin-bottom: 20%;
+    border-radius: 8px;
+    
+  }
+  .dash_img{
+    margin-top: 150px;
+    
+  }
+  .user_event-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 20px;
+  }
+  
+  .user_event-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  .user_event-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .user_event-card h3 {
+    margin-bottom: 5px;
+    
+  }
+  
+  .user_event-card p {
+    margin: 5px 0;
+    color: #fff;
+  }
+  

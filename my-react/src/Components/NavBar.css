@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color:grey; /* Change background color as desired */
+  background-color:rgb(255, 255, 255); /* Change background color as desired */
   padding: 10px 20px; /* Adjust padding as needed */
   position: fixed;
   top: 0;
@@ -12,19 +12,34 @@
   z-index: 1000; /* Ensure the navbar is above other elements */
 }
 
-.logo a {
-  color: #fff; /* Change logo text color */
-  text-decoration: none;
-  font-size: 1.5rem; /* Adjust font size as needed */
-  text-align: center;
-  margin-bottom: 60px;
-}
+.logo {
+  position: absolute;
+  color: #000000; /* Change logo text color */
 
+}
+.logo a :hover{
+  color:rgba(255, 217, 0, 0.842);
+}
+.nav_imagelogo{
+  position: absolute;
+  width: 290%;
+  top: 4%;
+}
+.nav_title{
+  position: absolute;
+  font-style: italic;
+  font-weight: 400;
+  top: 40%;
+  left: 160px;
+
+}
 .nav-links {
+  position: absolute;
   list-style: none;
   display: flex;
   margin: 0;
   padding: 0;
+  left: 50%;
 }
 
 .nav-links li {
@@ -33,7 +48,7 @@
 }
 
 .nav-links li a {
-  color: #fff; /* Change nav item text color */
+  color: #000000; /* Change nav item text color */
   text-decoration: none;
 }
 

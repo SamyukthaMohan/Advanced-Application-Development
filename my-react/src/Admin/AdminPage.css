@@ -1,0 +1,67 @@
+.admind_content-wrapper {
+    display: flex;
+  }
+  
+.admind_main-content {
+    margin-left: 50px;
+    padding: 10px;     
+    background-color:transparent;
+    
+  }
+  .admind_para{
+    position: absolute;
+    top: 150px;
+    left: 210px;
+    color: #666;
+
+  }
+  .event-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three equal-width columns */
+    gap: 10px; /* Adjust the gap between grid items */
+    margin-top: 5%;
+    justify-content: center;
+    align-items: center;
+    padding-right: 155px;
+    overflow-x: auto;
+}
+  
+  /* Styles for EventCard component */
+  .event-card {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin: 10px;
+      padding: 20px; /* Adjust padding as needed */
+      width: calc(300px - 20px); /* Adjust width to account for margin */
+      transition: transform 0.3s ease;
+      box-sizing: border-box;
+      
+  }
+  
+  .event-card:first-child{
+      margin-left: 0;
+  }
+  
+  .event-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .event-card img {
+    border-radius: 10px;
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+  }
+  
+  .event-card h3 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-top: 15px;
+  }
+  
+  .event-card p {
+    color: #666;
+    font-size: 1rem;
+    margin-top: 10px;
+  }
