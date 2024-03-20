@@ -20,26 +20,29 @@ function App() {
   
 
   return (
-    
-      <BrowserRouter>
-      <Routes>
-        <Route exact path='/' element={<Landing/>}/>
-        <Route  path="/login" element={<Login/>} />
-        <Route path="/signup" element={<Signup/>} />
-        <Route path="/adminlogin" element={<AdminLogin/>} />
-        <Route path="/admindash" element={<AdminPage/>} />
-        <Route path="/addevent" element={<AddEvent/>} />
-        <Route path="/editevent" element={<EditEvent/>} />
-        <Route path="/view" element={<ViewBooking/>} />
-        <Route path="/list" element={<ListEvent/>} />
-        <Route path="/allevents" element={<EventsAvailable/>} />
-        <Route path="/mypayments" element={<PaymentHist/>} />
-        <Route path="/mybookings" element={<BookingStatus/>} />
-        <Route path="/dashboard" element={<UserDash/>} />
-      </Routes>
-    </BrowserRouter>
+    <div>
+    <ListEvent/>
+    </div>
     
     )
   }
 
 export default App
+
+  //   <BrowserRouter>
+  //   <Routes>
+  //     <Route exact path='/' element={<Landing/>}/>
+  //     <Route  path="/login" element={<Login/>} />
+  //     <Route path="/signup" element={<Signup/>} />
+  //     <Route path="/adminlogin" element={<AdminLogin/>} />
+  //     <Route path="/admindash" element={<AdminPage/>} />
+  //     <Route path="/addevent" element={<AddEvent/>} />
+  //     <Route path="/editevent" element={<EditEvent/>} />
+  //     <Route path="/view" element={<ViewBooking/>} />
+  //     <Route path="/list" element={<ListEvent/>} />
+  //     <Route path="/allevents" element={<EventsAvailable/>} />
+  //     <Route path="/mypayments" element={<PaymentHist/>} />
+  //     <Route path="/mybookings" element={<BookingStatus/>} />
+  //     <Route path="/dashboard" element={<UserDash/>} />
+  //   </Routes>
+  // </BrowserRouter>

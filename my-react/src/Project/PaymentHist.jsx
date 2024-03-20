@@ -1,89 +1,57 @@
-import React, { useState, useEffect } from 'react';
+// PaymentPage.jsx
+
+import React, { useState } from 'react';
 import './PaymentHis.css';
-import UserNav from '../Components/UserNav';
 
-const mockPaymentData = [
-  { 
-    id: 1, 
-    organizerId: 101, 
-    status: 'Success', 
-    totalAmount: 500, 
-    amountPaid: 500, 
-    balanceAmount: 0, 
-    paymentDate: '2024-03-20', 
-    modeOfPayment: 'Credit Card' 
-  },
-  { 
-    id: 2, 
-    organizerId: 101, 
-    status: 'Success', 
-    totalAmount: 700, 
-    amountPaid: 500, 
-    balanceAmount: 200, 
-    paymentDate: '2024-03-25', 
-    modeOfPayment: 'PayPal' 
-  },
-  { 
-    id: 3, 
-    organizerId: 101, 
-    status: 'Pending', 
-    totalAmount: 1000, 
-    amountPaid: 500, 
-    balanceAmount: 500, 
-    paymentDate: '2024-03-30', 
-    modeOfPayment: 'Bank Transfer' 
-  },
-  // Add more payment data as needed
-];
+const PaymentPage = () => {
+  const [totalAmount, setTotalAmount] = useState('');
+  const [amountToBePaid, setAmountToBePaid] = useState('');
+  const [balanceAmount, setBalanceAmount] = useState('');
+  const [paymentDate, setPaymentDate] = useState('');
+  const [paymentMode, setPaymentMode] = useState('');
 
-const PaymentHist = () => {
-  const [paymentHist, setPaymentHist] = useState([]);
-
-  useEffect(() => {
-    // Simulate fetching payment data from an API
-    // Replace this with actual API call
-    setPaymentHist(mockPaymentData);
-  }, []);
+  const handlePayment = () => {
+    // Here you can implement your payment logic
+    console.log('Processing payment with:', totalAmount, amountToBePaid, balanceAmount, paymentDate, paymentMode);
+  };
 
   return (
-    <div>
-    <UserNav />
-    <div className="payment-history-container">
-      <h2 className="payment-history-heading">Payment History</h2>
-      <div className="payment-history-table-container">
-        <table className="payment-history-table">
-          <thead>
-            <tr>
-              <th>Payment ID</th>
-              <th>Organizer ID</th>
-              <th>Status</th>
-              <th>Total Amount</th>
-              <th>Amount Paid</th>
-              <th>Balance Amount</th>
-              <th>Payment Date</th>
-              <th>Mode of Payment</th>
-            </tr>
-          </thead>
-          <tbody>
-            {paymentHistory.map(payment => (
-              <tr key={payment.id} className={`payment-status-${payment.status.toLowerCase()}`}>
-                <td>{payment.id}</td>
-                <td>{payment.organizerId}</td>
-                <td>{payment.status}</td>
-                <td>${payment.totalAmount}</td>
-                <td>${payment.amountPaid}</td>
-                <td>${payment.balanceAmount}</td>
-                <td>{payment.paymentDate}</td>
-                <td>{payment.modeOfPayment}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+    <div className="payment-container">
+      <h2>Payment Details</h2>
+      <form className="payment-form" onSubmit={handlePayment}>
+        <div className="payment-form-group">
+          <label>Total Amount:</label>
+          <input type="text" placeholder="Enter total amount" value={totalAmount} onChange={(e) => setTotalAmount(e.target.value)} />
+        </div>
+        <div className="payment-form-group">
+          <label>Amount to be Paid:</label>
+          <input type="text" placeholder="Enter amount to be paid" value={amountToBePaid} onChange={(e) => setAmountToBePaid(e.target.value)} />
+        </div>
+        <div className="payment-form-group">
+          <label>Balance Amount:</label>
+          <input type="text" placeholder="Enter balance amount" value={balanceAmount} onChange={(e) => setBalanceAmount(e.target.value)} />
+        </div>
+        <div className="payment-form-group">
+          <label>Payment Date:</label>
+          <input type="date" value={paymentDate} onChange={(e) => setPaymentDate(e.target.value)} />
+        </div>
+        <div className="payment-form-group">
+          <label>Mode of Payment:</label>
+          <select value={paymentMode} onChange={(e) => setPaymentMode(e.target.value)}>
+            <option value="">Select Payment Mode</option>
+            <option value="card">Card</option>
+            <option value="upi">UPI</option>
+            <option value="netbanking">Net Banking</option>
+            <option value="qrscan">QR Scan</option>
+          </select>
+        </div>
+        <button type="submit">Pay Now</button>
+      </form>
+      <div>
+      <imag src=""></imag>
       </div>
     </div>
-    </div>
-    
   );
 };
 
-export default PaymentHist;
+export default PaymentPage;
