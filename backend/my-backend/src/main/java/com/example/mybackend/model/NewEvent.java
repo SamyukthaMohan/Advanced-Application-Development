@@ -10,17 +10,21 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name="userdetails")
+@Table(name="addnewevent")
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
-public class User {
+public class NewEvent {
+    
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private int id;
-    private String username;
-    private String email;
-    private String password;
-    private String conpassword;
-    private String mobnum;
+    private String eventtype;
+    private String description;
+    private String totalpackage;
+    private String participantcount;
+    private String charges;
+    
+    
+
 }

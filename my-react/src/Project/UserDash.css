@@ -1,50 +1,38 @@
-/* UserDashboard.css */
+.dashboard {
+  background-color: #e3dfdf; /* Set your desired background color */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Example: 2 columns */
+  grid-gap: 20px; /* Adjust as needed for spacing between grid items */
+  padding: 20px; /* Adjust padding as needed */
+  margin-top: 6%;
+}
 
-.user-dashboard {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 0 20px;
-  }
+.grid-box {
+
+  background-color: #fff; /* Set background color for grid boxes */
+  border: 1px solid #ccc; /* Add border for grid boxes */
+  padding: 50px; /* Add padding inside grid boxes */
+  text-align: center; /* Center text inside grid boxes */
   
-  .banner img {
-    position: relative;
-    width: 100%;
-    height: auto;
-    margin-bottom: 20%;
-    border-radius: 8px;
-    
-  }
-  .dash_img{
-    margin-top: 150px;
-    
-  }
-  .user_event-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    grid-gap: 20px;
-  }
-  
-  .user_event-card {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-  }
-  
-  .user_event-card img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 10px;
-  }
-  
-  .user_event-card h3 {
-    margin-bottom: 5px;
-    
-  }
-  
-  .user_event-card p {
-    margin: 5px 0;
-    color: #fff;
-  }
-  
+}
+
+/* Example classes for different events */
+.event1 {
+  background-color: #ffcccc; /* Set background color for event 1 */
+}
+
+.event2 {
+  background-color: #ccffcc; /* Set background color for event 2 */
+}
+
+.event3 {
+  background-color: #ccccff; /* Set background color for event 3 */
+}
+
+.event4 {
+  background-color: #ffffcc; /* Set background color for event 4 */
+}
+.event1_img{
+  width: 90%;
+}
+/* Add more event classes as needed */
