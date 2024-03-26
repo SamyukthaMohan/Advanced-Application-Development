@@ -23,4 +23,5 @@ public class User {
     private String password;
     private String conpassword;
     private String mobnum;
+    private String role;
 }

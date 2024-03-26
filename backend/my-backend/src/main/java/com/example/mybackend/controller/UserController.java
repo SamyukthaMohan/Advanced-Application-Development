@@ -6,13 +6,15 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.lang.NonNull;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.mybackend.dto.UpdateRequest;
 import com.example.mybackend.model.User;
 import com.example.mybackend.service.UserService;
 
-import io.micrometer.common.lang.NonNull;
+
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -42,7 +44,7 @@ public class UserController {
     }
     
     @GetMapping("readUser/{email}")
-    //@PreAuthorize("hasAuthority('USER') or hasAuthority('ADMIN')")
+    @PreAuthorize("hasAuthority('USER') or hasAuthority('ADMIN')")
     public ResponseEntity<?> getUserByEmail(@PathVariable String email) {
         Optional<User> user = userService.getUserByEmail(email);
         return user.map(value -> new ResponseEntity<>(value, HttpStatus.OK))
@@ -50,14 +52,14 @@ public class UserController {
     }
 
     @GetMapping("/readUsers")
-    //@PreAuthorize("hasAuthority('ADMIN')")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public ResponseEntity<List<User>> getAllUsers() {
         List<User> users = userService.getAllUsers();
         return new ResponseEntity<>(users, HttpStatus.OK);
     }
 
     @PutMapping("updateUser/{email}")
-    //@PreAuthorize("hasAuthority('USER') or hasAuthority('ADMIN')")
+    @PreAuthorize("hasAuthority('USER') or hasAuthority('ADMIN')")
     public ResponseEntity<User> updateUser(@NonNull @PathVariable String email,
             @RequestBody UpdateRequest updateRequest) {
         User updated = userService.updateUser(email, updateRequest);
@@ -65,7 +67,7 @@ public class UserController {
     }
 
     @DeleteMapping("deleteUser/{userId}")
-    //@PreAuthorize("hasAuthority('ADMIN')")
+    @PreAuthorize("hasAuthority('ADMIN') or hasAuthority('USER')" )
     public ResponseEntity<Void> removeUser(@NonNull @PathVariable Integer userId) {
         userService.removeUser(userId);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);

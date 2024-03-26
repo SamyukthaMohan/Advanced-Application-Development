@@ -5,13 +5,14 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.NonNull;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.example.mybackend.dto.UpdateRequest;
 import com.example.mybackend.model.User;
 import com.example.mybackend.repo.UserRepo;
 
-import io.micrometer.common.lang.NonNull;
 
 @Service
 public class UserService {
@@ -19,10 +20,13 @@ public class UserService {
     @Autowired
     private UserRepo userRepository;
 
-    
+    @Autowired
+    PasswordEncoder passwordEncoder;
 
     public User createUser(@NonNull User user)   //()-->Parameter,passing data called argument
     {
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
+        user.setConpassword(passwordEncoder.encode(user.getConpassword()));
         return userRepository.save(user);
 
     }

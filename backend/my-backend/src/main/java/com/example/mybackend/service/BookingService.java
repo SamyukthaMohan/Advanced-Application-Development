@@ -4,12 +4,12 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Service;
 
 import com.example.mybackend.model.Booking;
-import com.example.mybackend.model.NewEvent;
+
 import com.example.mybackend.repo.BookingRepo;
-import com.example.mybackend.repo.NewEventRepo;
 
 @Service
 public class BookingService {
@@ -25,7 +25,7 @@ public class BookingService {
 		return book.findById(id);
 	}
 	
-	public Booking putDetails(Booking bstatus) {
+	public Booking putDetails(@NonNull Booking bstatus) {
 		return book.save(bstatus);
 	}
 	
